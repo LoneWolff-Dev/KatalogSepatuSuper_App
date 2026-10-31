@@ -1,0 +1,81 @@
+{
+  "settings": {
+    "storeName": "SepatuSuper",
+    "tagline": "The best shoes in town",
+    "address": "123 Main St, Anytown, USA",
+    "phone": "555-1234",
+    "currency": "Rp.",
+    "activeWhatsApp": true
+  },
+  "admin": {
+    "id": "admin_1",
+    "name": "Admin SepatuSuper",
+    "email": "admin@sepatusuper.com",
+    "password": "password123"
+  },
+
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Sneakers",
+      "slug": "sneakers"
+    },
+    {
+      "id": "cat_2",
+      "name": "Boots",
+      "slug": "boots"
+    },
+    {
+      "id": "cat_3",
+      "name": "Sandals",
+      "slug": "sandals"
+    }
+  ],
+
+  "products": [
+    {
+      "id": "prod_1",
+      "name": "Nike Air Max",
+      "categoryId": "cat_1",
+      "categoryName": "Sneakers",
+      "price": 1500000,
+      "stockStatus": 10,
+      "description": "Comfortable and stylish sneakers for everyday wear.",
+      "image": "nike_air_max.jpg",
+      "createdAt": "2024-06-01T10:00:00Z"
+    },
+    {
+      "id": "prod_2",
+      "name": "Adidas Ultraboost",
+      "categoryId": "cat_1",
+      "categoryName": "Sneakers",
+      "price": 1800000,
+      "stockStatus": 5,
+      "description": "High-performance running shoes with responsive cushioning.",
+      "image": "adidas_ultraboost.jpg",
+      "createdAt": "2024-06-02T11:30:00Z"
+    },
+    {
+      "id": "prod_3",
+      "name": "Timberland Classic Boots",
+      "categoryId": "cat_2",
+      "categoryName": "Boots",
+      "price": 2000000,
+      "stockStatus": 8,
+      "description": "Durable and rugged boots perfect for outdoor adventures.",
+      "image": "timberland_classic_boots.jpg",
+      "createdAt": "2024-06-03T09:15:00Z"
+    },
+    {
+      "id": "prod_4",
+      "name": "Birkenstock Arizona Sandals",
+      "categoryId": "cat_3",
+      "categoryName": "Sandals",
+      "price": 1200000,
+      "stockStatus": 12,
+      "description": "Comfortable and stylish sandals for casual wear.",
+      "image": "birkenstock_arizona_sandals.jpg",
+      "createdAt": "2024-06-04T14:45:00Z"
+    }
+  ]
+}
