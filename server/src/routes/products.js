@@ -45,8 +45,8 @@ const upload = multer({
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const { categryId, search, stockStatus } = req.query;
-  const products = db.getProducts({ categryId, search, stockStatus });
+  const { categoryId, search, stockStatus } = req.query;
+  const products = db.getProducts({ categoryId, search, stockStatus });
   res.json({
     success: true,
     count: products.length,
@@ -69,9 +69,18 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", authenticateToken, upload.single("image"), (req, res) => {
-  const { name, price, stockStatus, categoryId, description, imageurl } =
-    req.body;
-  if (!name || name.trim()) {
+  const {
+    name,
+    price,
+    stockStatus,
+    categoryId: bodyCategoryId,
+    category_id: legacyCategoryId,
+    description,
+    imageurl,
+    image,
+  } = req.body;
+  const categoryId = bodyCategoryId || legacyCategoryId;
+  if (!name || !name.trim()) {
     return res.status(400).json({
       success: false,
       message: "Product name is required",
@@ -83,6 +92,12 @@ router.post("/", authenticateToken, upload.single("image"), (req, res) => {
       message: "Category product is required",
     });
   }
+  if (!db.getCategoryById(categoryId)) {
+    return res.status(400).json({
+      success: false,
+      message: "Category not found",
+    });
+  }
   if (!price || isNaN(price) || price < 0) {
     return res.status(400).json({
       success: false,
@@ -90,7 +105,7 @@ router.post("/", authenticateToken, upload.single("image"), (req, res) => {
     });
   }
 
-  let finalImage = imageurl;
+  let finalImage = imageurl || image;
   if (req.file) {
     finalImage = `/uploads/${req.file.filename}`;
   }
@@ -113,8 +128,17 @@ router.post("/", authenticateToken, upload.single("image"), (req, res) => {
 
 router.put("/:id", authenticateToken, upload.single("image"), (req, res) => {
   const { id } = req.params;
-  const { name, price, stockStatus, categoryId, description, imageurl } =
-    req.body;
+  const {
+    name,
+    price,
+    stockStatus,
+    categoryId: bodyCategoryId,
+    category_id: legacyCategoryId,
+    description,
+    imageurl,
+    image,
+  } = req.body;
+  const categoryId = bodyCategoryId || legacyCategoryId;
 
   const exsisting = db.getProductById(id);
   if (!exsisting) {
@@ -126,7 +150,15 @@ router.put("/:id", authenticateToken, upload.single("image"), (req, res) => {
 
   const updatePayload = {};
   if (name !== undefined) updatePayload.name = name.trim();
-  if (categoryId !== undefined) updatePayload.categoryId = categoryId;
+  if (categoryId !== undefined) {
+    if (!db.getCategoryById(categoryId)) {
+      return res.status(400).json({
+        success: false,
+        message: "Category not found",
+      });
+    }
+    updatePayload.categoryId = categoryId;
+  }
   if (price !== undefined) updatePayload.price = parseFloat(price);
   if (stockStatus !== undefined) updatePayload.stockStatus = stockStatus;
   if (description !== undefined) updatePayload.description = description.trim();
@@ -135,6 +167,8 @@ router.put("/:id", authenticateToken, upload.single("image"), (req, res) => {
     updatePayload.image = `/uploads/${req.file.filename}`;
   } else if (imageurl !== undefined && imageurl.trim()) {
     updatePayload.image = imageurl.trim();
+  } else if (image !== undefined && image.trim()) {
+    updatePayload.image = image.trim();
   }
 
   const updated = db.updateProduct(id, updatePayload);
