@@ -1,0 +1,9 @@
+node_modules/
+**/node_modules/
+**/dist/
+**/.env
+**/.env.*
+!**/.env.example
+server/uploads/
+server/src/db/*.sqlite-shm
+server/src/db/*.sqlite-wal

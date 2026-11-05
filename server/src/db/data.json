@@ -1,19 +1,19 @@
 {
   "settings": {
     "storeName": "SepatuSuper",
-    "tagline": "The best shoes in town",
-    "address": "123 Main St, Anytown, USA",
-    "phone": "555-1234",
-    "currency": "Rp.",
+    "tagline": "Temukan sepatu yang pas untuk setiap langkah.",
+    "address": "",
+    "phone": "",
+    "whatsappNumber": "",
+    "currency": "Rp",
     "activeWhatsApp": true
   },
   "admin": {
     "id": "admin_1",
     "name": "Admin SepatuSuper",
-    "email": "admin@sepatusuper.com",
+    "email": "admin@sepatusuper.id",
     "password": "password123"
   },
-
   "categories": [
     {
       "id": "cat_1",
@@ -27,55 +27,497 @@
     },
     {
       "id": "cat_3",
-      "name": "Sandals",
-      "slug": "sandals"
+      "name": "Sepatu Kasual",
+      "slug": "sepatu-kasual"
+    },
+    {
+      "id": "cat_4",
+      "name": "Sepatu Lari",
+      "slug": "sepatu-lari"
     }
   ],
-
   "products": [
     {
       "id": "prod_1",
-      "name": "Nike Air Max",
+      "name": "Air Max Everyday",
+      "brand": "Nike",
       "categoryId": "cat_1",
-      "categoryName": "Sneakers",
       "price": 1500000,
-      "stockStatus": 10,
-      "description": "Comfortable and stylish sneakers for everyday wear.",
-      "image": "nike_air_max.jpg",
-      "createdAt": "2024-06-01T10:00:00Z"
+      "stockStatus": "Tersedia",
+      "description": "Sneakers ringan dengan bantalan empuk untuk menemani aktivitas harian.",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 2 },
+            { "size": "42", "stock": 3 },
+            { "size": "43", "stock": 1 }
+          ]
+        },
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "40", "stock": 2 },
+            { "size": "41", "stock": 1 },
+            { "size": "42", "stock": 2 }
+          ]
+        }
+      ]
     },
     {
       "id": "prod_2",
-      "name": "Adidas Ultraboost",
-      "categoryId": "cat_1",
-      "categoryName": "Sneakers",
+      "name": "Ultraboost Run",
+      "brand": "Adidas",
+      "categoryId": "cat_4",
       "price": 1800000,
-      "stockStatus": 5,
-      "description": "High-performance running shoes with responsive cushioning.",
-      "image": "adidas_ultraboost.jpg",
-      "createdAt": "2024-06-02T11:30:00Z"
+      "stockStatus": "Tersedia",
+      "description": "Sepatu lari dengan bantalan responsif dan upper yang terasa nyaman.",
+      "image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 1 },
+            { "size": "40", "stock": 2 },
+            { "size": "41", "stock": 2 }
+          ]
+        },
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "40", "stock": 1 },
+            { "size": "41", "stock": 1 }
+          ]
+        }
+      ]
     },
     {
       "id": "prod_3",
-      "name": "Timberland Classic Boots",
+      "name": "Classic Heritage Boot",
+      "brand": "Timberland",
       "categoryId": "cat_2",
-      "categoryName": "Boots",
       "price": 2000000,
-      "stockStatus": 8,
-      "description": "Durable and rugged boots perfect for outdoor adventures.",
-      "image": "timberland_classic_boots.jpg",
-      "createdAt": "2024-06-03T09:15:00Z"
+      "stockStatus": "Tersedia",
+      "description": "Boots tangguh dengan desain klasik untuk gaya dan petualangan sehari-hari.",
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Cokelat",
+          "hex": "#8f7358",
+          "sizes": [
+            { "size": "40", "stock": 2 },
+            { "size": "41", "stock": 2 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 2 }
+          ]
+        }
+      ]
     },
     {
       "id": "prod_4",
-      "name": "Birkenstock Arizona Sandals",
+      "name": "Suede Classic",
+      "brand": "Puma",
       "categoryId": "cat_3",
-      "categoryName": "Sandals",
       "price": 1200000,
-      "stockStatus": 12,
-      "description": "Comfortable and stylish sandals for casual wear.",
-      "image": "birkenstock_arizona_sandals.jpg",
-      "createdAt": "2024-06-04T14:45:00Z"
+      "stockStatus": "Tersedia",
+      "description": "Sepatu kasual dengan siluet klasik dan desain nyaman untuk dipakai sehari-hari.",
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "38", "stock": 3 },
+            { "size": "39", "stock": 3 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 }
+          ]
+        },
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 2 },
+            { "size": "41", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_5",
+      "name": "574 Core",
+      "brand": "New Balance",
+      "categoryId": "cat_3",
+      "price": 1650000,
+      "stockStatus": "Tersedia",
+      "description": "Siluet retro yang nyaman dengan bantalan empuk untuk kegiatan sehari-hari.",
+      "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Abu-abu",
+          "hex": "#999a98",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_6",
+      "name": "Chuck 70 Canvas",
+      "brand": "Converse",
+      "categoryId": "cat_3",
+      "price": 1100000,
+      "stockStatus": "Tersedia",
+      "description": "Sneakers kanvas ikonis dengan detail klasik dan sol yang nyaman.",
+      "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_7",
+      "name": "Old Skool Classic",
+      "brand": "Vans",
+      "categoryId": "cat_3",
+      "price": 950000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu skate klasik dengan garis samping ikonis dan sol karet kuat.",
+      "image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Hitam Putih",
+          "hex": "#343638",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_8",
+      "name": "Gel-Excite 10",
+      "brand": "Asics",
+      "categoryId": "cat_4",
+      "price": 1250000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu lari ringan dengan bantalan lembut untuk latihan harian.",
+      "image": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_9",
+      "name": "Revolution 7",
+      "brand": "Nike",
+      "categoryId": "cat_4",
+      "price": 1050000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu lari harian yang ringan, fleksibel, dan nyaman dipakai bergerak.",
+      "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Abu-abu",
+          "hex": "#9b9b98",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_10",
+      "name": "Forum Low",
+      "brand": "Adidas",
+      "categoryId": "cat_1",
+      "price": 1450000,
+      "stockStatus": "Tersedia",
+      "description": "Terinspirasi dari basket klasik, cocok untuk gaya santai sehari-hari.",
+      "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_11",
+      "name": "Classic Leather",
+      "brand": "Reebok",
+      "categoryId": "cat_3",
+      "price": 1150000,
+      "stockStatus": "Tersedia",
+      "description": "Sneakers bergaya minimalis dengan tampilan bersih dan mudah dipadukan.",
+      "image": "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_12",
+      "name": "Go Run Consistent",
+      "brand": "Skechers",
+      "categoryId": "cat_4",
+      "price": 1350000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu lari ringan dengan bantalan responsif untuk langkah yang lebih nyaman.",
+      "image": "https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_13",
+      "name": "RS-X Reinvention",
+      "brand": "Puma",
+      "categoryId": "cat_1",
+      "price": 1600000,
+      "stockStatus": "Tersedia",
+      "description": "Sneakers berkarakter dengan siluet tebal dan bantalan empuk.",
+      "image": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Krem",
+          "hex": "#d9d2c4",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_14",
+      "name": "Fresh Foam 1080",
+      "brand": "New Balance",
+      "categoryId": "cat_4",
+      "price": 2100000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu lari premium dengan bantalan lembut untuk jarak dekat maupun jauh.",
+      "image": "https://images.unsplash.com/photo-1605408499391-6368c628ef42?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Biru",
+          "hex": "#63798b",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_15",
+      "name": "Run Star Hike",
+      "brand": "Converse",
+      "categoryId": "cat_1",
+      "price": 1450000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu kanvas ikonis dengan sol platform bergerigi yang berani.",
+      "image": "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_16",
+      "name": "Euro Sprint Hiker",
+      "brand": "Timberland",
+      "categoryId": "cat_2",
+      "price": 2200000,
+      "stockStatus": "Tersedia",
+      "description": "Boots tangguh bergaya outdoor dengan dukungan nyaman untuk aktivitas harian.",
+      "image": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Cokelat",
+          "hex": "#8f7358",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_17",
+      "name": "Blazer Mid '77",
+      "brand": "Nike",
+      "categoryId": "cat_1",
+      "price": 1750000,
+      "stockStatus": "Tersedia",
+      "description": "Sneakers mid-top bernuansa vintage dengan desain basket klasik.",
+      "image": "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Putih",
+          "hex": "#f4f3ee",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_18",
+      "name": "Terrex Trail Rider",
+      "brand": "Adidas",
+      "categoryId": "cat_4",
+      "price": 1850000,
+      "stockStatus": "Tersedia",
+      "description": "Sepatu serbaguna dengan grip mantap untuk jalur kota maupun trail ringan.",
+      "image": "https://images.unsplash.com/photo-1579338559194-a162d19bf842?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_19",
+      "name": "Sk8-Hi Classic",
+      "brand": "Vans",
+      "categoryId": "cat_1",
+      "price": 1250000,
+      "stockStatus": "Tersedia",
+      "description": "Sneakers high-top klasik dengan konstruksi kokoh dan gaya skate autentik.",
+      "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Hitam",
+          "hex": "#2d3034",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_20",
+      "name": "Flyer Runner",
+      "brand": "Puma",
+      "categoryId": "cat_4",
+      "price": 900000,
+      "stockStatus": "Tersedia",
+      "description": "Pilihan ringan untuk jogging santai dan menemani rutinitas harian.",
+      "image": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=1000&q=85",
+      "colors": [
+        {
+          "name": "Abu-abu",
+          "hex": "#999a98",
+          "sizes": [
+            { "size": "39", "stock": 2 },
+            { "size": "40", "stock": 3 },
+            { "size": "41", "stock": 3 },
+            { "size": "42", "stock": 2 },
+            { "size": "43", "stock": 1 }
+          ]
+        }
+      ]
     }
   ]
 }

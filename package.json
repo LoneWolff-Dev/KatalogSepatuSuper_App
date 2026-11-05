@@ -1,0 +1,23 @@
+{
+  "name": "katalog-sepatusuper",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n client,server \"npm:dev:client\" \"npm:dev:server\"",
+    "dev:client": "npm run dev --workspace @sepatusuper/client",
+    "dev:server": "npm run dev --workspace @sepatusuper/server",
+    "build": "npm run build --workspace @sepatusuper/client",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "oxlint": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

@@ -1,0 +1,2550 @@
+.headerAdminLink {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.headerAdminLink:hover {
+  color: var(--orange-dark);
+}
+
+.adminWorkspace {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 196px minmax(0, 1fr);
+  color: #293630;
+  background: #f5f2ea;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.adminSidebar {
+  min-height: 100vh;
+  padding: 18px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  color: #e8eee8;
+  background: #204d40;
+}
+
+.adminBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+}
+
+.adminBrand > span {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #c44e35;
+  border-radius: 6px 6px 6px 2px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.adminNavCaption {
+  margin: 32px 0 9px;
+  color: #acc2b8;
+  font-size: 8px;
+  letter-spacing: 0.75px;
+}
+
+.adminNavigation {
+  display: grid;
+  gap: 4px;
+}
+
+.adminNavigation button,
+.adminSidebarBottom > button,
+.adminSidebarBottom > a {
+  min-height: 34px;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c7d7cf;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  text-align: left;
+  text-decoration: none;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.adminNavigation button:hover,
+.adminSidebarBottom > button:hover,
+.adminSidebarBottom > a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.adminNavigation button.active {
+  color: #fff;
+  background: #bd4d35;
+  font-weight: 650;
+}
+
+.adminNavigation button > span {
+  width: 15px;
+  color: #c4d5ca;
+  font-size: 14px;
+  text-align: center;
+}
+
+.storeOnlineCard {
+  margin-top: 21px;
+  padding: 11px 10px;
+  display: grid;
+  gap: 9px;
+  color: #edf4ed;
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 6px;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.storeOnlineCard > span {
+  color: #bdd9c2;
+  font-size: 8px;
+}
+
+.storeOnlineCard > span::first-letter {
+  color: #78d9a0;
+}
+
+.storeOnlineCard strong {
+  font-size: 10px;
+}
+
+.storeOnlineCard small {
+  color: #d3dd9f;
+  font-size: 8px;
+}
+
+.adminSidebarBottom {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.adminSidebarBottom > button,
+.adminSidebarBottom > a {
+  width: 100%;
+}
+
+.adminProfile {
+  min-height: 49px;
+  margin-top: 10px;
+  padding-top: 9px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.adminProfile > span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  flex: none;
+  place-items: center;
+  color: #204d40;
+  background: #d8e3d6;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.adminProfile > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.adminProfile strong,
+.adminProfile small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adminProfile strong {
+  color: #fff;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.adminProfile small {
+  margin-top: 3px;
+  color: #b7c9c0;
+  font-size: 8px;
+}
+
+.adminProfile button {
+  padding: 4px;
+  color: #d8e3dc;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.adminMain {
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminTopBar {
+  min-height: 49px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffefa;
+  border-bottom: 1px solid #e8e4da;
+  color: #8b8d85;
+  font-size: 8px;
+}
+
+.adminTopBar > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminTopBar a {
+  color: #93958d;
+  text-decoration: none;
+}
+
+.adminTopBar strong {
+  color: #293630;
+  font-weight: 650;
+}
+
+.adminContent {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 25px 24px 24px;
+  flex: 1;
+}
+
+.adminPageHeading {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.adminPageHeading h1 {
+  margin: 0;
+  color: #293630;
+  font-size: clamp(20px, 2.4vw, 25px);
+  font-weight: 700;
+  letter-spacing: -0.75px;
+}
+
+.adminPageHeading p {
+  margin: 5px 0 0;
+  color: #85867e;
+  font-size: 9px;
+}
+
+.adminHeadingActions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.primaryButton,
+.loginSubmitButton {
+  min-height: 34px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fff;
+  background: #bd4d35;
+  border: 1px solid #bd4d35;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.primaryButton:hover,
+.loginSubmitButton:hover {
+  background: #a93e2a;
+  border-color: #a93e2a;
+}
+
+.primaryButton:disabled,
+.loginSubmitButton:disabled,
+.orderSubmitButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.storePreviewButton {
+  color: #53645a;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.adminNotice,
+.adminFormError,
+.loginError {
+  margin: 0 0 13px;
+  padding: 9px 11px;
+  color: #286649;
+  background: #e8f3e8;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.adminFormError,
+.loginError {
+  color: #a4412d;
+  background: #fff0ec;
+}
+
+.adminStatsGrid {
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.adminStatCard {
+  min-height: 94px;
+  padding: 14px 15px 11px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #313a34;
+  background: #fffefa;
+  border: 1px solid #e7e2d9;
+  border-radius: 8px;
+}
+
+.adminStatCard.featuredStat {
+  color: #f5f6ea;
+  background: #214e40;
+  border-color: #214e40;
+}
+
+.statIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  color: #b94a32;
+  background: #faece5;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.warningIcon {
+  color: #ad741c;
+  background: #fff3dc;
+}
+
+.trendIcon {
+  color: #ba5738;
+  background: #faece5;
+}
+
+.statLabel {
+  color: #81847b;
+  font-size: 9px;
+}
+
+.featuredStat .statLabel {
+  color: #d0ded3;
+}
+
+.adminStatCard > strong {
+  margin-top: 6px;
+  color: #293630;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+}
+
+.featuredStat > strong {
+  color: #d6df9d;
+}
+
+.adminStatCard > strong small {
+  color: inherit;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.adminStatCard > strong.topBrandStat {
+  font-size: 18px;
+}
+
+.adminStatCard > p {
+  margin: 4px 0 0;
+  color: #929188;
+  font-size: 8px;
+}
+
+.featuredStat > p {
+  color: #c5d5c9;
+}
+
+.adminTablePanel {
+  min-width: 0;
+  overflow: hidden;
+  background: #fffefa;
+  border: 1px solid #e5e0d7;
+  border-radius: 8px;
+}
+
+.adminPanelHeader {
+  min-height: 44px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adminPanelHeader h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #303b34;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.adminPanelHeader h2 > span {
+  padding: 4px 6px;
+  color: #b34d36;
+  background: #f8e9df;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.exportButton {
+  padding: 5px 0 5px 7px;
+  color: #7f827a;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 9px;
+}
+
+.productFilters {
+  padding: 0 12px 10px;
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) repeat(3, minmax(86px, auto));
+  gap: 7px;
+}
+
+.adminSearchField,
+.productFilters select,
+.storeSettingsForm input,
+.storeSettingsForm textarea {
+  min-height: 31px;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #39433d;
+  background: #fffefa;
+  border: 1px solid #e2ded5;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 8px;
+}
+
+.adminSearchField > span {
+  color: #69736b;
+  font-size: 16px;
+}
+
+.adminSearchField input {
+  width: 100%;
+  min-width: 0;
+  color: #39433d;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 9px;
+}
+
+.adminSearchField input::placeholder {
+  color: #a0a097;
+}
+
+.productFilters select {
+  width: 100%;
+  cursor: pointer;
+}
+
+.adminTableScroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.adminDataTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.adminDataTable thead {
+  color: #777a72;
+  background: #f6f3ed;
+}
+
+.adminDataTable th {
+  height: 31px;
+  padding: 0 10px;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.adminDataTable td {
+  height: 55px;
+  padding: 7px 10px;
+  color: #73776f;
+  border-top: 1px solid #ece8e0;
+  font-size: 8px;
+}
+
+.adminDataTable td:first-child,
+.adminDataTable th:first-child {
+  padding-left: 13px;
+}
+
+.tableProductIdentity {
+  min-width: 175px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.tableProductImage {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  overflow: hidden;
+  background: #e5e7e5;
+  border-radius: 5px;
+}
+
+.tableProductImage img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.tableProductIdentity strong,
+.tableProductIdentity span {
+  max-width: 210px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tableProductIdentity strong {
+  color: #303b34;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.tableProductIdentity span {
+  margin-top: 4px;
+  color: #99998f;
+  font-size: 7px;
+}
+
+.tableSizeList {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.tableSizeList span {
+  padding: 4px 5px;
+  color: #666b63;
+  background: #f3f1eb;
+  border-radius: 3px;
+  font-size: 7px;
+}
+
+.tableSizeList span.unavailableText {
+  color: #9c9b92;
+  background: transparent;
+}
+
+.tablePrice {
+  color: #303b34;
+  font-size: 9px;
+}
+
+.stockStatusBadge {
+  padding: 4px 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #296849;
+  background: #e8f3e9;
+  border: 0;
+  border-radius: 99px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 7px;
+}
+
+.stockStatusBadge > span {
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.stockStatusBadge.menipis {
+  color: #a76613;
+  background: #fff1dc;
+}
+
+.stockStatusBadge.habis {
+  color: #bc3832;
+  background: #fdeaea;
+}
+
+.stockPairCount {
+  margin-top: 4px;
+  display: block;
+  color: #9a998f;
+  font-size: 7px;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tableActions button,
+.tableActionButton {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  color: #67736a;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tableActions button:hover,
+.tableActionButton:hover {
+  background: #f1eee8;
+}
+
+.tableActions button.deleteAction,
+.tableActionButton.deleteAction {
+  color: #d33f3f;
+}
+
+.adminTableFooter {
+  min-height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #8c8d84;
+  border-top: 1px solid #ece8e0;
+  font-size: 8px;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.paginationControls button,
+.paginationControls > span {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  color: #72766e;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 9px;
+}
+
+.paginationControls button {
+  cursor: pointer;
+}
+
+.paginationControls button:disabled {
+  color: #c2c0b9;
+  cursor: default;
+}
+
+.paginationControls > span {
+  color: #aa492f;
+  background: #f7e9df;
+}
+
+.emptyTableMessage {
+  height: 94px !important;
+  color: #88887e !important;
+  text-align: center;
+}
+
+.adminFooter {
+  min-height: 34px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8b8b80;
+  font-size: 8px;
+}
+
+.adminLoading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #5e6b62;
+  background: #f5f2ea;
+  font-size: 13px;
+}
+
+.adminLoading > span {
+  width: 10px;
+  height: 10px;
+  background: #bd4d35;
+  border-radius: 50%;
+  animation: pulse 800ms ease-in-out infinite alternate;
+}
+
+.adminLoadError {
+  flex-direction: column;
+}
+
+.customerAddress {
+  max-width: 240px;
+  margin-top: 4px;
+  display: block;
+  overflow: hidden;
+  color: #85877e;
+  font-size: 8px;
+  text-overflow: ellipsis;
+}
+
+.orderStatusSelect {
+  max-width: 160px;
+  min-height: 28px;
+  padding: 0 7px;
+  color: #39433d;
+  background: #fffefa;
+  border: 1px solid #e2ded5;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 8px;
+}
+
+.reportLayout {
+  display: grid;
+  gap: 15px;
+}
+
+.reportLayout .adminStatsGrid {
+  margin: 0;
+}
+
+.brandReportList {
+  padding: 3px 14px 12px;
+}
+
+.brandReportRow {
+  min-height: 44px;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid #ece8e0;
+}
+
+.brandReportRow:last-child {
+  border-bottom: 0;
+}
+
+.brandReportRow > span {
+  color: #a54b34;
+  font-size: 9px;
+}
+
+.brandReportRow > strong {
+  color: #303b34;
+  font-size: 10px;
+}
+
+.brandReportRow > small {
+  color: #83867e;
+  font-size: 8px;
+}
+
+.storeSettingsPanel {
+  max-width: 720px;
+}
+
+.storeSettingsForm {
+  padding: 5px 15px 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: 13px;
+}
+
+.storeSettingsForm > label {
+  display: grid;
+  gap: 6px;
+  color: #48554c;
+  font-size: 9px;
+}
+
+.storeSettingsForm input,
+.storeSettingsForm textarea {
+  width: 100%;
+  min-height: 35px;
+  font-size: 10px;
+}
+
+.storeSettingsForm textarea {
+  padding-top: 8px;
+  resize: vertical;
+}
+
+.storeSettingsForm label:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.storeSettingsForm .whatsappSettingToggle {
+  display: flex;
+  align-items: center;
+}
+
+.storeSettingsForm .whatsappSettingToggle input {
+  width: 14px;
+  min-height: 14px;
+  accent-color: #214e40;
+}
+
+.storeSettingsForm > button {
+  justify-self: start;
+}
+
+.overviewLayout {
+  display: grid;
+  gap: 15px;
+}
+
+.adminLoginPage {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #293630;
+  background: #f5f2ea;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.loginPhotoPanel {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(20, 33, 39, 0.28), rgba(17, 26, 34, 0.86)),
+    url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=85")
+      center / cover,
+    #35444a;
+}
+
+.loginBackLink {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  z-index: 1;
+  color: #f4f3ea;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.loginPhotoShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 21, 28, 0.45), transparent 70%);
+}
+
+.loginPhotoCopy {
+  width: 100%;
+  padding: 42px 8% 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.loginPhotoCopy > p {
+  margin: 0 0 20px;
+  color: #dce69a;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1px;
+}
+
+.loginPhotoCopy h1 {
+  margin: 0;
+  color: #eff2bf;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 650;
+  letter-spacing: -2px;
+  line-height: 1.02;
+}
+
+.loginPhotoCopy > span {
+  max-width: 340px;
+  margin-top: 15px;
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.loginPhotoCopy > footer {
+  margin-top: 34px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 7px;
+}
+
+.loginPhotoCopy > footer small {
+  font-size: inherit;
+}
+
+.loginFormPanel {
+  min-height: 100vh;
+  padding: 28px 8%;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.loginPortalLabel {
+  position: absolute;
+  top: 30px;
+  right: 8%;
+  color: #81867d;
+  font-size: 9px;
+}
+
+.loginFormCard {
+  width: min(390px, 100%);
+}
+
+.loginFormCard .brand-lockup {
+  font-size: 13px;
+}
+
+.loginFormCard > h2 {
+  margin: 26px 0 10px;
+  color: #273630;
+  font-size: clamp(29px, 3.7vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 1.08;
+}
+
+.loginFormCard > p:not(.loginSupport) {
+  margin: 0;
+  color: #7d8279;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.loginFormCard form {
+  margin-top: 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.loginFormCard form > label {
+  margin-top: 5px;
+  color: #39453d;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.loginFormCard form > input,
+.passwordField {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 10px;
+  color: #303a33;
+  background: #fffefa;
+  border: 1px solid #e3dfd6;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 10px;
+}
+
+.passwordField {
+  display: flex;
+  align-items: center;
+}
+
+.passwordField input {
+  width: 100%;
+  height: 35px;
+  color: #303a33;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 10px;
+}
+
+.passwordField button {
+  padding: 4px;
+  color: #68756c;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 8px;
+}
+
+.loginSubmitButton {
+  width: 100%;
+  min-height: 39px;
+  margin-top: 7px;
+  font-size: 10px;
+}
+
+.loginError {
+  margin: 1px 0;
+}
+
+.loginSupport {
+  margin: 21px 0 0;
+  color: #858980;
+  font-size: 9px;
+  text-align: center;
+}
+
+.loginSupport a {
+  color: #bb4a31;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.loginCopyright {
+  position: absolute;
+  right: 0;
+  bottom: 23px;
+  left: 0;
+  color: #898b82;
+  font-size: 8px;
+  text-align: center;
+}
+
+.adminModalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  padding: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(24, 31, 33, 0.57);
+  backdrop-filter: blur(2px);
+}
+
+.productEditorModal {
+  width: min(790px, 100%);
+  max-height: calc(100vh - 36px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #303b34;
+  background: #fffefa;
+  border-radius: 14px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.productEditorHeader {
+  min-height: 66px;
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.productEditorHeader h2 {
+  margin: 0;
+  color: #303b34;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+}
+
+.productEditorHeader p {
+  margin: 5px 0 0;
+  color: #898b82;
+  font-size: 8px;
+}
+
+.adminIconButton {
+  width: 29px;
+  height: 29px;
+  color: #737b72;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.productEditorForm {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.productFormMain {
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  gap: 17px;
+}
+
+.productImageEditor,
+.productDetailsEditor {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.formFieldLabel,
+.productDetailsEditor label,
+.imageUrlField {
+  display: grid;
+  gap: 5px;
+  color: #39463e;
+  font-size: 8px;
+  font-weight: 650;
+}
+
+.productImagePreview {
+  height: 120px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #747a72;
+  background: #e4e6e2;
+  border-radius: 6px;
+  font-size: 8px;
+}
+
+.productImagePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageUploadButton {
+  min-height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bd4d35;
+  border: 1px dashed #e2d8ca;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 8px;
+}
+
+.imageUploadButton input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+}
+
+.productImageEditor > small {
+  color: #929188;
+  font-size: 7px;
+}
+
+.imageUrlField {
+  color: #74786f;
+  font-size: 8px;
+}
+
+.imageUrlField input,
+.productDetailsEditor input,
+.productDetailsEditor select,
+.productDetailsEditor textarea,
+.colorNameEditor input:not([type="color"]),
+.inventorySizeRow input {
+  width: 100%;
+  min-height: 31px;
+  padding: 0 9px;
+  color: #39433d;
+  background: #fffefa;
+  border: 1px solid #e2ded5;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 9px;
+}
+
+.productDetailsEditor textarea {
+  min-height: 55px;
+  padding: 8px 9px;
+  resize: vertical;
+}
+
+.productDetailsEditor select {
+  cursor: pointer;
+}
+
+.productFormSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.inventoryEditor {
+  margin: 0 18px 12px;
+  padding: 11px 11px 8px;
+  border: 1px solid #e5e0d7;
+  border-radius: 6px;
+}
+
+.inventoryEditorHeading {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9px;
+}
+
+.inventoryEditorHeading h3 {
+  margin: 0;
+  color: #39443d;
+  font-size: 10px;
+}
+
+.inventoryEditorHeading p {
+  margin: 3px 0 0;
+  color: #8a8b81;
+  font-size: 7px;
+}
+
+.inventoryEditorHeading > strong {
+  padding: 6px 8px;
+  color: #b54d35;
+  background: #faeee4;
+  border-radius: 4px;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.inventoryColorGroup {
+  margin-bottom: 8px;
+  padding: 7px 8px 5px;
+  background: #fbfaf6;
+  border: 1px solid #efebe3;
+  border-radius: 5px;
+}
+
+.inventoryColorHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colorNameEditor {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.colorNameEditor input[type="color"] {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  background: #fffefa;
+  border: 1px solid #e2ded5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.colorNameEditor input:not([type="color"]) {
+  width: 175px;
+  min-height: 27px;
+}
+
+.inventoryGridHeader,
+.inventorySizeRow {
+  display: grid;
+  grid-template-columns: minmax(95px, 0.65fr) minmax(95px, 1fr) 30px;
+  align-items: center;
+  gap: 8px;
+}
+
+.inventoryGridHeader {
+  min-height: 25px;
+  color: #747970;
+  font-size: 7px;
+}
+
+.inventorySizeRow {
+  min-height: 31px;
+  margin-bottom: 4px;
+}
+
+.inventorySizeRow input {
+  min-height: 26px;
+}
+
+.inventorySizeRow input[type="number"] {
+  appearance: textfield;
+}
+
+.inventorySizeRow input[type="number"]::-webkit-inner-spin-button,
+.inventorySizeRow input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.inventorySizeRow .tableActionButton:disabled,
+.inventoryColorHeading .tableActionButton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.addInventoryRow,
+.addColorButton {
+  min-height: 26px;
+  padding: 0 4px;
+  color: #b84d35;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 8px;
+  text-align: left;
+}
+
+.addColorButton {
+  min-height: 30px;
+  margin-top: 1px;
+  padding: 0 8px;
+  color: #506b59;
+  background: #edf3eb;
+  border-radius: 4px;
+}
+
+.productEditorForm > .adminFormError {
+  margin: 0 18px 9px;
+}
+
+.productEditorFooter {
+  min-height: 49px;
+  padding: 7px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e9e5dd;
+}
+
+.productEditorFooter > span {
+  color: #929188;
+  font-size: 8px;
+}
+
+.productEditorFooter > div {
+  display: flex;
+  gap: 8px;
+}
+
+.secondaryButton {
+  min-height: 33px;
+  padding: 0 12px;
+  color: #48534b;
+  background: #fffefa;
+  border: 1px solid #e2ded5;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 9px;
+}
+
+.orderBackdrop {
+  overflow-y: auto;
+}
+
+.orderExperience {
+  width: min(980px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  color: #303a33;
+  background: #fffefa;
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(13, 26, 21, 0.24);
+}
+
+.orderExperienceHeader {
+  min-height: 73px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  background: #204d40;
+}
+
+.orderExperienceHeader p {
+  margin: 0 0 5px;
+  color: #dce6ab;
+  font-size: 7px;
+  letter-spacing: 0.5px;
+}
+
+.orderExperienceHeader h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+}
+
+.orderCloseButton {
+  width: 29px;
+  height: 29px;
+  flex: none;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.orderExperienceBody {
+  padding: 18px 22px 15px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.orderShoeDetails {
+  min-width: 0;
+}
+
+.orderShoePhoto {
+  height: 247px;
+  position: relative;
+  overflow: hidden;
+  background: #e2e7e7;
+  border-radius: 8px;
+}
+
+.orderShoePhoto img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.orderPhotoBadge {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  padding: 5px 8px;
+  color: #39453d;
+  background: #fffefa;
+  border-radius: 4px;
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.orderShoeCopy {
+  padding-top: 15px;
+}
+
+.orderShoeCopy .eyebrow {
+  margin: 0 0 7px;
+  color: #bb4a31;
+  font-size: 7px;
+}
+
+.orderShoeCopy h3 {
+  margin: 0;
+  color: #171b18;
+  font-size: 21px;
+  letter-spacing: -0.6px;
+}
+
+.orderShoeCopy > p:not(.eyebrow) {
+  margin: 8px 0 10px;
+  color: #85877e;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.orderShoeCopy > strong {
+  display: block;
+  color: #bf4a31;
+  font-size: 18px;
+}
+
+.orderShoeCopy > span {
+  margin-top: 11px;
+  padding: 9px 10px;
+  display: block;
+  color: #667064;
+  background: #f2f0e7;
+  border-radius: 5px;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.orderFields {
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.orderChoiceSection {
+  padding-bottom: 11px;
+  border-bottom: 1px solid #e7e4dc;
+}
+
+.orderFieldHeading {
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #3e4841;
+  font-size: 8px;
+}
+
+.orderFieldHeading label,
+.orderFieldHeading > span {
+  font-weight: 650;
+}
+
+.orderFieldHeading button {
+  padding: 3px 0;
+  color: #55725f;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 7px;
+  text-decoration: underline;
+}
+
+.orderFieldHeading > strong {
+  color: #71776e;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.orderSizeOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.orderSizeOption {
+  min-width: 38px;
+  height: 34px;
+  padding: 0 9px;
+  color: #38433b;
+  background: #fffefa;
+  border: 1px solid #ddd9d0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 9px;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.orderSizeOption.selected {
+  color: #fff;
+  background: #263d33;
+  border-color: #263d33;
+}
+
+.orderSizeOption:disabled {
+  color: #b6b5ad;
+  background: #f2f0eb;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.orderValidationHint {
+  margin: 9px 0 0;
+  padding: 8px 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c24c35;
+  background: #fff2ed;
+  border-radius: 5px;
+  font-size: 8px;
+}
+
+.orderValidationHint > span {
+  width: 14px;
+  height: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.variantAvailability {
+  margin: 8px 0 0;
+  color: #3e795d;
+  font-size: 8px;
+}
+
+.colorChoiceSection {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colorChoiceSection .orderFieldHeading {
+  margin: 0;
+}
+
+.orderColorOptions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orderColorOption {
+  width: 25px;
+  height: 25px;
+  padding: 3px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid #ddd9d0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.orderColorOption.selected {
+  border: 2px solid #245340;
+}
+
+.orderColorOption > span {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(30, 40, 35, 0.16);
+  border-radius: 50%;
+}
+
+.buyerFields {
+  display: grid;
+  gap: 6px;
+}
+
+.buyerFields h3 {
+  margin: 0 0 2px;
+  color: #343e37;
+  font-size: 10px;
+}
+
+.buyerFields label {
+  margin-top: 3px;
+  color: #445047;
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.buyerFields input,
+.buyerFields textarea {
+  width: 100%;
+  min-height: 32px;
+  padding: 7px 9px;
+  color: #39433d;
+  background: #fffefa;
+  border: 1px solid #e3dfd6;
+  border-radius: 5px;
+  outline-color: #48745c;
+  font: inherit;
+  font-size: 8px;
+}
+
+.buyerFields textarea {
+  min-height: 53px;
+  resize: vertical;
+}
+
+.whatsappPreview {
+  padding: 10px 11px;
+  color: #285d43;
+  background: #eff4e5;
+  border-radius: 6px;
+}
+
+.whatsappPreview > p {
+  margin: 0 0 7px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.whatsappPreview > p > span {
+  color: #748a6d;
+  font-size: 6px;
+  font-weight: 500;
+}
+
+.whatsappPreview pre {
+  max-height: 76px;
+  margin: 0;
+  overflow: auto;
+  color: #55705a;
+  font-family: inherit;
+  font-size: 7px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.orderSubmitError {
+  margin: 0;
+  padding: 8px 10px;
+  color: #a4412d;
+  background: #fff0ec;
+  border-radius: 4px;
+  font-size: 8px;
+}
+
+.orderSubmitButton {
+  min-height: 39px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  background: #204d40;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 650;
+  transition: background 150ms ease;
+}
+
+.orderSubmitButton:hover:not(:disabled) {
+  background: #183d33;
+}
+
+.orderSubmitFootnote {
+  margin: -5px 0 0;
+  color: #8a8c83;
+  font-size: 7px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .adminWorkspace {
+    grid-template-columns: 165px minmax(0, 1fr);
+  }
+
+  .adminContent {
+    padding: 20px 16px;
+  }
+
+  .adminDataTable th,
+  .adminDataTable td {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .orderExperienceBody {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .headerAdminLink {
+    display: none;
+  }
+
+  .adminWorkspace {
+    display: block;
+  }
+
+  .adminSidebar {
+    min-height: auto;
+    padding: 11px 12px;
+  }
+
+  .adminBrand {
+    margin-bottom: 9px;
+  }
+
+  .adminNavCaption,
+  .storeOnlineCard,
+  .adminSidebarBottom {
+    display: none;
+  }
+
+  .adminNavigation {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+  }
+
+  .adminNavigation button {
+    min-height: 32px;
+    flex: none;
+    white-space: nowrap;
+  }
+
+  .adminTopBar {
+    min-height: 40px;
+    padding: 0 13px;
+  }
+
+  .adminTopBar > span {
+    display: none;
+  }
+
+  .adminContent {
+    padding: 18px 12px;
+  }
+
+  .adminPageHeading {
+    align-items: flex-start;
+  }
+
+  .adminPageHeading h1 {
+    font-size: 19px;
+  }
+
+  .storePreviewButton {
+    display: none;
+  }
+
+  .adminHeadingActions .primaryButton {
+    min-height: 31px;
+    padding: 0 9px;
+    white-space: nowrap;
+  }
+
+  .adminStatsGrid {
+    gap: 7px;
+  }
+
+  .adminStatCard {
+    min-height: 84px;
+    padding: 11px 8px 8px;
+  }
+
+  .statIcon {
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    right: 7px;
+  }
+
+  .statLabel {
+    max-width: calc(100% - 22px);
+    font-size: 7px;
+  }
+
+  .adminStatCard > strong {
+    font-size: 15px;
+  }
+
+  .adminStatCard > p {
+    font-size: 6px;
+  }
+
+  .productFilters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .adminSearchField {
+    grid-column: 1 / -1;
+  }
+
+  .adminFooter {
+    padding: 0 12px;
+  }
+
+  .adminFooter > span:last-child {
+    display: none;
+  }
+
+  .storeSettingsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .storeSettingsForm label:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .adminLoginPage {
+    min-height: 100svh;
+    grid-template-columns: 1fr;
+  }
+
+  .loginPhotoPanel {
+    min-height: 230px;
+  }
+
+  .loginBackLink {
+    top: 17px;
+    left: 18px;
+  }
+
+  .loginPhotoCopy {
+    padding: 28px 20px 20px;
+  }
+
+  .loginPhotoCopy > p {
+    margin-bottom: 9px;
+  }
+
+  .loginPhotoCopy h1 {
+    font-size: 33px;
+  }
+
+  .loginPhotoCopy > span,
+  .loginPhotoCopy > footer {
+    display: none;
+  }
+
+  .loginFormPanel {
+    min-height: 520px;
+    padding: 60px 23px 65px;
+  }
+
+  .loginPortalLabel {
+    top: 18px;
+    right: 20px;
+  }
+
+  .loginCopyright {
+    bottom: 17px;
+  }
+
+  .productEditorModal {
+    max-height: calc(100svh - 20px);
+    border-radius: 10px;
+  }
+
+  .productEditorHeader {
+    min-height: 59px;
+    padding: 10px 13px;
+  }
+
+  .productFormMain {
+    padding: 12px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .productImageEditor {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    align-items: center;
+  }
+
+  .productImageEditor .formFieldLabel,
+  .productImageEditor > small,
+  .imageUrlField {
+    grid-column: 1 / -1;
+  }
+
+  .productImagePreview {
+    height: 88px;
+    grid-row: span 2;
+  }
+
+  .productDetailsEditor {
+    gap: 8px;
+  }
+
+  .inventoryEditor {
+    margin: 0 12px 10px;
+  }
+
+  .orderExperience {
+    max-height: calc(100svh - 24px);
+    border-radius: 12px;
+  }
+
+  .orderExperienceHeader {
+    min-height: 64px;
+    padding: 11px 14px;
+  }
+
+  .orderExperienceHeader h2 {
+    max-width: 270px;
+    font-size: 15px;
+  }
+
+  .orderExperienceBody {
+    padding: 12px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .orderShoeDetails {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    align-items: center;
+    gap: 11px;
+  }
+
+  .orderShoePhoto {
+    height: 100px;
+  }
+
+  .orderPhotoBadge {
+    top: 5px;
+    left: 5px;
+    padding: 4px 5px;
+    font-size: 6px;
+  }
+
+  .orderShoeCopy {
+    padding: 0;
+  }
+
+  .orderShoeCopy .eyebrow {
+    font-size: 6px;
+  }
+
+  .orderShoeCopy h3 {
+    font-size: 15px;
+  }
+
+  .orderShoeCopy > p:not(.eyebrow) {
+    max-height: 34px;
+    margin: 4px 0;
+    overflow: hidden;
+    font-size: 7px;
+  }
+
+  .orderShoeCopy > strong {
+    font-size: 13px;
+  }
+
+  .orderShoeCopy > span {
+    display: none;
+  }
+
+  .orderFields {
+    gap: 9px;
+  }
+
+  .orderChoiceSection {
+    padding-bottom: 8px;
+  }
+
+  .orderSizeOption {
+    min-width: 34px;
+    height: 31px;
+  }
+
+  .buyerFields {
+    gap: 5px;
+  }
+
+  .buyerFields textarea {
+    min-height: 44px;
+  }
+
+  .whatsappPreview pre {
+    max-height: 60px;
+  }
+}
+
+.headerAdminLink {
+  display: none;
+}
+
+.adminWorkspace {
+  grid-template-columns: 205px minmax(0, 1fr);
+  color: #293630;
+  background: #f5f2ea;
+}
+
+.adminSidebar {
+  padding: 18px 14px 12px;
+}
+
+.adminBrand {
+  font-size: 13px;
+}
+
+.adminNavCaption {
+  margin-top: 30px;
+}
+
+.adminContent {
+  width: min(1120px, 100%);
+  padding: 26px 24px 23px;
+}
+
+.adminPageHeading h1 {
+  font-size: clamp(21px, 2.2vw, 25px);
+}
+
+.adminPageHeading p {
+  font-size: 10px;
+}
+
+.adminStatsGrid {
+  gap: 13px;
+}
+
+.adminStatCard {
+  min-height: 92px;
+}
+
+.statLabel {
+  font-size: 10px;
+}
+
+.adminStatCard > strong {
+  font-size: 20px;
+}
+
+.adminStatCard > p {
+  font-size: 8px;
+}
+
+.adminPanelHeader h2 {
+  font-size: 12px;
+}
+
+.adminDataTable th {
+  font-size: 8px;
+}
+
+.adminDataTable td {
+  font-size: 9px;
+}
+
+.tableProductIdentity strong {
+  font-size: 9px;
+}
+
+.productEditorModal {
+  width: min(610px, 100%);
+  border-radius: 14px;
+}
+
+.productEditorHeader {
+  min-height: 68px;
+  padding: 13px 19px;
+}
+
+.productEditorHeader h2 {
+  font-size: 18px;
+}
+
+.productFormMain {
+  padding: 15px 19px;
+}
+
+.formFieldLabel,
+.productDetailsEditor label,
+.imageUrlField {
+  font-size: 9px;
+}
+
+.productImagePreview {
+  height: 125px;
+}
+
+.productDetailsEditor input,
+.productDetailsEditor select,
+.productDetailsEditor textarea,
+.colorNameEditor input:not([type="color"]),
+.inventorySizeRow input {
+  min-height: 33px;
+  font-size: 9px;
+}
+
+.inventoryEditor {
+  margin: 0 19px 12px;
+}
+
+.inventoryEditorHeading h3 {
+  font-size: 10px;
+}
+
+.inventoryGridHeader,
+.inventorySizeRow {
+  grid-template-columns: minmax(95px, 0.65fr) minmax(95px, 1fr) 30px;
+}
+
+.loginPhotoOverline {
+  position: absolute;
+  top: 42px;
+  left: 8%;
+  z-index: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.3px;
+}
+
+.loginPhotoPanel {
+  background: #39484d;
+}
+
+.loginPhotoPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=85")
+    center / cover;
+  filter: grayscale(1) brightness(0.64);
+}
+
+.loginPhotoShade {
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(12, 21, 28, 0.68), rgba(17, 30, 39, 0.16) 72%);
+}
+
+.loginPhotoCopy h1 {
+  max-width: 470px;
+  font-size: clamp(36px, 4.1vw, 48px);
+}
+
+.loginPhotoOverline > span {
+  width: 21px;
+  height: 2px;
+  background: #c64e35;
+}
+
+.loginPhotoCopy > p {
+  display: none;
+}
+
+.loginFormCard form {
+  gap: 7px;
+}
+
+.loginOptions {
+  margin: 5px 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #868a80;
+  font-size: 9px;
+}
+
+.loginOptions label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.loginOptions input {
+  width: 13px;
+  height: 13px;
+  margin: 0;
+  accent-color: var(--terracotta);
+}
+
+.loginOptions a {
+  color: var(--terracotta);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.loginSubmitButton {
+  min-height: 40px;
+}
+
+.orderExperience {
+  border-radius: 17px;
+}
+
+.orderExperienceHeader {
+  min-height: 73px;
+  padding: 14px 22px;
+}
+
+.orderExperienceHeader p {
+  font-size: 7px;
+}
+
+.orderExperienceHeader h2 {
+  font-size: 18px;
+}
+
+.orderExperience.isSelecting {
+  width: min(520px, 100%);
+  border-radius: 22px;
+}
+
+.orderExperience.isSelecting .orderExperienceHeader {
+  min-height: 96px;
+  padding: 18px 24px;
+}
+
+.orderExperience.isSelecting .orderExperienceHeader h2 {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+}
+
+.orderExperience.isSelecting .orderExperienceBody {
+  padding: 24px;
+  display: block;
+}
+
+.orderExperience.isSelecting .orderShoeDetails {
+  margin-bottom: 22px;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: center;
+  gap: 15px;
+}
+
+.orderExperience.isSelecting .orderShoePhoto {
+  height: 100px;
+  border-radius: 8px;
+}
+
+.orderExperience.isSelecting .orderPhotoBadge {
+  display: none;
+}
+
+.orderExperience.isSelecting .orderShoeCopy {
+  padding: 0;
+}
+
+.orderExperience.isSelecting .orderShoeCopy h3 {
+  font-size: 17px;
+}
+
+.orderExperience.isSelecting .orderShoeCopy > p:not(.eyebrow),
+.orderExperience.isSelecting .orderShoeCopy > span {
+  display: none;
+}
+
+.orderExperience.isSelecting .orderShoeCopy > strong {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.orderExperience.isSelecting .orderFields {
+  gap: 12px;
+}
+
+.orderExperience.isSelecting .orderFieldHeading,
+.orderExperience.isSelecting .buyerFields label {
+  font-size: 10px;
+}
+
+.orderExperience.isSelecting .orderSizeOption {
+  min-width: 47px;
+  height: 43px;
+  font-size: 12px;
+}
+
+.orderExperience.isSelecting .orderValidationHint {
+  padding: 10px;
+  font-size: 9px;
+}
+
+.orderExperience.isSelecting .buyerFields h3 {
+  font-size: 12px;
+}
+
+.orderExperience.isSelecting .buyerFields input,
+.orderExperience.isSelecting .buyerFields textarea {
+  min-height: 38px;
+  font-size: 9px;
+}
+
+.orderExperience.isSelecting .buyerFields textarea {
+  min-height: 58px;
+}
+
+.orderExperience.isSelecting .buyerFields label[for="buyerNote"],
+.orderExperience.isSelecting .buyerFields #buyerNote {
+  display: none;
+}
+
+.orderExperience.isSelecting .orderSubmitError {
+  padding: 6px 8px;
+  font-size: 7px;
+}
+
+.orderExperience.isSelecting .whatsappPreview pre {
+  max-height: 58px;
+}
+
+.orderExperience.isSelecting .orderSubmitButton {
+  min-height: 48px;
+  font-size: 10px;
+}
+
+.orderExperience.isSelecting .orderSubmitButton:disabled {
+  color: #939b96;
+  background: #dfe4e1;
+  opacity: 1;
+}
+
+.orderExperience.isSelecting .orderSubmitFootnote {
+  margin-top: -3px;
+  font-size: 8px;
+}
+
+@media (max-width: 900px) {
+  .adminWorkspace {
+    grid-template-columns: 165px minmax(0, 1fr);
+  }
+
+  .adminContent {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .adminWorkspace {
+    display: block;
+  }
+
+  .adminSidebar {
+    min-height: auto;
+  }
+
+  .adminContent {
+    padding: 18px 12px;
+  }
+
+  .adminStatCard > p {
+    font-size: 6px;
+  }
+
+  .loginPhotoOverline {
+    top: 15px;
+    left: 20px;
+    font-size: 7px;
+  }
+
+  .productEditorModal {
+    width: 100%;
+  }
+
+  .orderExperience.isSelecting {
+    width: min(520px, 100%);
+    max-height: calc(100svh - 24px);
+    border-radius: 12px;
+  }
+
+  .orderExperience.isSelecting .orderExperienceHeader {
+    min-height: 64px;
+    padding: 11px 14px;
+  }
+
+  .orderExperience.isSelecting .orderExperienceHeader h2 {
+    max-width: 270px;
+    font-size: 15px;
+  }
+
+  .orderExperience.isSelecting .orderExperienceBody {
+    padding: 12px;
+  }
+
+  .orderExperience.isSelecting .orderShoeDetails {
+    margin-bottom: 12px;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .orderExperience.isSelecting .orderShoePhoto {
+    height: 86px;
+  }
+
+  .orderExperience.isSelecting .orderShoeCopy h3 {
+    font-size: 14px;
+  }
+
+  .orderExperience.isSelecting .orderSizeOption {
+    min-width: 34px;
+    height: 31px;
+  }
+
+  .orderExperience.isSelecting .buyerFields input,
+  .orderExperience.isSelecting .buyerFields textarea {
+    min-height: 32px;
+  }
+}
