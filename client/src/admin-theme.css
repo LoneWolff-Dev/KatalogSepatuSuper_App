@@ -1,0 +1,176 @@
+/* Admin: Duralux-like dashboard + Sage Mist palette (overrides figma/admin.css) */
+
+.adminWorkspace {
+  background: #ecfdf5;
+  color: #000;
+}
+.adminSidebar {
+  background: #fffbeb;
+  color: #000;
+  border-right: 1px solid var(--line);
+}
+.adminBrand { color: #000; }
+.adminBrand > span { background: var(--green); }
+.adminNavCaption { color: var(--muted); }
+.adminNavigation button,
+.adminSidebarBottom > button,
+.adminSidebarBottom > a {
+  color: #065f46;
+  border: 1px solid transparent;
+}
+.adminNavigation button:hover,
+.adminSidebarBottom > button:hover,
+.adminSidebarBottom > a:hover {
+  color: var(--green);
+  background: var(--sage-soft);
+}
+.adminNavigation button.active {
+  color: #a7f3d0;
+  background: var(--green);
+  border-color: var(--green);
+}
+.adminNavigation button > span { color: inherit; }
+.storeOnlineCard {
+  background: var(--sage-soft);
+  border: 1px solid var(--sage);
+  color: var(--green-deep);
+}
+.storeOnlineCard > span,
+.storeOnlineCard small { color: var(--green); }
+.adminProfile { border-color: var(--line); }
+.adminProfile strong { color: #000; }
+.adminProfile small { color: var(--muted); }
+.adminProfile > span { background: var(--sage); color: #000; }
+.adminProfile button { color: var(--green); }
+
+.adminTopBar {
+  background: rgba(253,253,253,0.85);
+  border-color: var(--line);
+  backdrop-filter: blur(8px);
+}
+.adminTopBar strong { color: #000; }
+.adminContent { background: transparent; }
+.adminPageHeading h1 { color: #000; }
+.adminPageHeading p { color: var(--muted); }
+
+.primaryButton,
+.loginSubmitButton { background: var(--green); border-color: var(--green); color: #a7f3d0; }
+.primaryButton:hover,
+.loginSubmitButton:hover { background: var(--green-deep); border-color: var(--green-deep); }
+
+/* Duralux-style stat cards */
+.adminStatCard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.adminStatCard.featuredStat {
+  background: var(--green);
+  border-color: var(--green);
+  color: #a7f3d0;
+}
+.featuredStat > strong { color: var(--sage); }
+.featuredStat .statLabel,
+.featuredStat > p { color: #a7f3d0; }
+.statIcon {
+  background: var(--sage-soft);
+  color: var(--green);
+  border-radius: 10px;
+}
+.statIcon.warningIcon { background: #fff3e6; color: #9a6416; }
+.statIcon.trendIcon { background: #eef3ff; color: #3276e4; }
+
+.adminTablePanel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.adminPanelHeader h2 > span {
+  color: var(--green);
+  background: var(--sage-soft);
+}
+.adminDataTable thead { background: #ecfdf5; }
+.adminDataTable th { color: #555; letter-spacing: 0.04em; text-transform: uppercase; font-size: 10px; }
+.adminDataTable td { border-color: var(--line-soft); }
+.adminDataTable tbody tr { transition: background 0.15s ease; }
+.adminDataTable tbody tr:hover { background: #fbfcfb; }
+
+.adminSearchField,
+.productFilters select,
+.storeSettingsForm input,
+.storeSettingsForm textarea,
+.productDetailsEditor input,
+.productDetailsEditor select,
+.productDetailsEditor textarea,
+.loginFormCard form > input,
+.passwordField {
+  border-color: var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.adminSearchField:focus-within,
+.productDetailsEditor input:focus,
+.productDetailsEditor select:focus,
+.productDetailsEditor textarea:focus,
+.loginFormCard form > input:focus,
+.passwordField:focus-within {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sage) 35%, transparent);
+  outline: none;
+}
+
+.stockStatusBadge { font-weight: 700; }
+.stockStatusBadge.aman { color: #1f6b3a; background: #e7f6ec; }
+.stockStatusBadge.menipis { color: #9a6416; background: #fff3e0; }
+.stockStatusBadge.habis { color: #b3191f; background: #fdecec; }
+
+.orderStatusSummary { font-weight: 700; }
+.orderStatusSummary.menunggu-konfirmasi { color: #9a6416; background: #fff3e0; }
+.orderStatusSummary.diproses { color: #3276e4; background: #eef3ff; }
+.orderStatusSummary.selesai { color: #1f6b3a; background: #e7f6ec; }
+.orderStatusSummary.dibatalkan { color: #b3191f; background: #fdecec; }
+
+.paginationControls > span { color: var(--green); background: var(--sage-soft); }
+
+/* Overview extra Duralux widgets */
+.duralux-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.duralux-mini-bars { display: flex; align-items: flex-end; gap: 8px; min-height: 88px; padding: 6px 0 2px; }
+.duralux-mini-bars .bar {
+  flex: 1;
+  min-height: 10px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, var(--sage), var(--green));
+}
+.duralux-mini-bars .bar.low { background: linear-gradient(180deg, #d8d8d8, #f0f0f0); }
+.duralux-kpi-row { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
+.duralux-kpi { background:#fff; border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+.duralux-kpi span { color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.duralux-kpi strong { display:block; margin-top:6px; font-size:20px; letter-spacing:-.02em; }
+.duralux-kpi small { color: var(--muted); font-size: 11px; }
+@media (max-width: 900px) {
+  .duralux-grid { grid-template-columns: 1fr; }
+  .duralux-kpi-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+/* Login matches sage mist */
+.adminLoginPage { background: #ecfdf5; }
+.loginFormPanel { background: #fffbeb; }
+.loginPhotoPanel { background: var(--green); }
+.loginPhotoCopy h1 { color: #a7f3d0; }
+.loginPhotoCopy > span { color: #a7f3d0; }
+.loginPhotoOverline > span { background: var(--sage); }
+.loginOptions a { color: var(--green); }
+.loginOptions input { accent-color: var(--green); }
+
+.orderExperienceHeader { background: var(--green); }
+.orderSubmitButton { background: var(--green); }
+.orderSubmitButton:hover:not(:disabled) { background: var(--green-deep); }
+.productEditorModal { border-radius: 18px; }
+.adminFeedback.successFeedback { background: #e7f6ec; color: #1f6b3a; border: 1px solid #bfe6cb; }
+.adminFeedback.errorFeedback { background: #fdecec; color: #b3191f; border: 1px solid #f3c1c1; }

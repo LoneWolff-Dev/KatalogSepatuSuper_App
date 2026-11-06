@@ -1,0 +1,309 @@
+/* Sage Mist + Morrow editorial + 21st display-cards / tumble-deck overrides */
+
+/* ---------- DisplayCards ---------- */
+.dc-grid {
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
+  padding: 56px 8px 96px;
+}
+.dc-card {
+  grid-area: stack;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: min(22rem, 82vw);
+  min-height: 9rem;
+  padding: 14px 16px;
+  transform: skewY(-8deg);
+  transform-origin: center;
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--card) 72%, transparent);
+  backdrop-filter: blur(6px);
+  transition: transform 0.7s ease, background 0.7s ease, border-color 0.7s ease;
+  overflow: hidden;
+}
+.dc-card::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -5%;
+  width: min(20rem, 80vw);
+  height: 110%;
+  background: linear-gradient(to left, var(--paper) 0%, transparent 100%);
+  pointer-events: none;
+}
+.dc-card:hover {
+  border-color: rgba(255,255,255,0.9);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+}
+.dc-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dc-icon-pill {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #a7f3d0;
+  font-size: 13px;
+}
+.dc-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.dc-label {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.dc-desc {
+  margin: 18px 0 0;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+.dc-date {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.dc-layer { filter: grayscale(100%); }
+.dc-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--paper) 50%, transparent);
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.dc-card:hover { filter: grayscale(0); }
+.dc-card:hover::before { opacity: 0; }
+.dc-card > * { position: relative; z-index: 2; }
+.dc-layer-1:hover { transform: skewY(-8deg) translateY(-2.5rem); }
+.dc-layer-2 { transform: skewY(-8deg) translate(4rem, 2.5rem); }
+.dc-layer-2:hover { transform: skewY(-8deg) translate(4rem, -0.25rem); }
+.dc-layer-3 { transform: skewY(-8deg) translate(8rem, 5rem); }
+.dc-layer-3:hover { transform: skewY(-8deg) translate(8rem, 2.5rem); }
+
+@media (max-width: 640px) {
+  .dc-grid { padding: 44px 0 110px; }
+  .dc-layer-2 { transform: skewY(-8deg) translate(2rem, 2.5rem); }
+  .dc-layer-2:hover { transform: skewY(-8deg) translate(2rem, -0.25rem); }
+  .dc-layer-3 { transform: skewY(-8deg) translate(4rem, 5rem); }
+  .dc-layer-3:hover { transform: skewY(-8deg) translate(4rem, 2.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-card { transition: none; }
+}
+
+/* ---------- Morrow editorial sections (adapted for SepatuSuper) ---------- */
+.morrow-hero {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 56px 0 8px;
+}
+.morrow-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.morrow-hero-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: 0 0 0 5px var(--sage-soft);
+}
+.morrow-hero h1 {
+  max-width: 880px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(42px, 7vw, 88px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+.morrow-hero h1 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--green);
+}
+.morrow-hero-sub {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.morrow-hero-sub p { margin: 0; max-width: 560px; }
+.morrow-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+.morrow-btn {
+  min-height: 48px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #a7f3d0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.morrow-btn:hover { background: var(--green); border-color: var(--green); }
+.morrow-btn-ghost { background: transparent; color: var(--ink); }
+.morrow-btn-ghost:hover { background: var(--sage-soft); border-color: var(--sage); color: var(--ink); }
+
+.morrow-section {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 72px 0 8px;
+}
+.morrow-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.morrow-section-head h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+.morrow-section-head h2 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--green); }
+.morrow-section-head p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 320px; }
+.morrow-kicker { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 10px; }
+
+.showcase-frame {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fffbeb, #d1fae5);
+}
+.showcase-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.7);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+.showcase-hint strong { color: var(--ink); }
+
+.morrow-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.morrow-service-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px;
+  background: var(--card);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.morrow-service-card .num {
+  align-self: flex-start;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--sage-soft);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+}
+.morrow-service-card h3 { margin: 18px 0 8px; font-size: 20px; letter-spacing: -0.02em; }
+.morrow-service-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+.morrow-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.morrow-number-card {
+  border-radius: 22px;
+  padding: 24px;
+  background: var(--ink);
+  color: #a7f3d0;
+}
+.morrow-number-card strong { display: block; font-family: var(--display); font-size: clamp(34px, 4vw, 52px); letter-spacing: -0.05em; }
+.morrow-number-card span { display: block; margin-top: 8px; color: rgba(255,255,255,0.72); font-size: 12px; line-height: 1.6; }
+
+.morrow-faq { display: grid; gap: 10px; }
+.morrow-faq details {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: var(--card);
+}
+.morrow-faq summary { cursor: pointer; font-weight: 700; font-size: 14px; }
+.morrow-faq p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+.morrow-cta {
+  width: min(1160px, calc(100% - 48px));
+  margin: 72px auto 0;
+  border-radius: 28px;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--green);
+  color: #a7f3d0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.morrow-cta h2 { margin: 0; font-family: var(--display); font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.04em; max-width: 560px; }
+
+.headerAdminLink { display: inline-flex !important; font-size: 11px; font-weight: 800; color: var(--green) !important; text-decoration: none; white-space: nowrap; }
+.header-nav a small { margin-left: 6px; color: var(--sage); font-size: 8px; font-weight: 800; letter-spacing: .08em; }
+.header-nav a.selected small { color: var(--sage); }
+
+.catalog-section { scroll-margin-top: 96px; }
+.about-section { scroll-margin-top: 96px; }
+
+@media (max-width: 900px) {
+  .morrow-hero-sub { grid-template-columns: 1fr; }
+  .morrow-services { grid-template-columns: 1fr; }
+  .morrow-numbers { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .morrow-section-head { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .morrow-numbers { grid-template-columns: 1fr; }
+  .morrow-section { padding-top: 48px; }
+}

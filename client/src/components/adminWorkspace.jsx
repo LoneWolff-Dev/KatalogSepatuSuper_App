@@ -18,6 +18,8 @@ import {
 } from "../services/catalogMeta.js";
 import AdminConfirmDialog from "./adminConfirmDialog.jsx";
 import ProductFormModal from "./productEditorModal.jsx";
+import { getPageItems } from "./Pagination.jsx";
+import ToastStack, { useToasts } from "./Toast.jsx";
 
 const pageSize = 6;
 const orderStatuses = [
@@ -85,6 +87,23 @@ function AdminDashboard({ onLogout }) {
   const [deletingProduct, setDeletingProduct] = useState(false);
   const desktopNotificationMenuRef = useRef(null);
   const mobileNotificationMenuRef = useRef(null);
+  const { toasts, push: notify, dismiss: dismissToast } = useToasts();
+
+  // Mirror inline banners into the pretty toast stack.
+  const lastNotice = useRef("");
+  const lastError = useRef("");
+  useEffect(() => {
+    if (notice && notice !== lastNotice.current) {
+      lastNotice.current = notice;
+      notify("success", notice);
+    }
+  }, [notice, notify]);
+  useEffect(() => {
+    if (error && error !== lastError.current) {
+      lastError.current = error;
+      notify("error", error);
+    }
+  }, [error, notify]);
 
   // Loads administrator identity and all management data from protected APIs.
   const loadWorkspace = useCallback(async () => {
@@ -340,28 +359,47 @@ function AdminDashboard({ onLogout }) {
     const lastPage = Math.max(1, Math.ceil(total / pageSize));
     const firstItem = total ? (page - 1) * pageSize + 1 : 0;
     const lastItem = Math.min(page * pageSize, total);
+    const items = getPageItems(page, lastPage);
+    const go = (next) => setPage(Math.max(1, Math.min(lastPage, next)));
     return (
-      <footer className="adminTableFooter">
-        <span>
-          Menampilkan {firstItem}–{lastItem} dari {total} {label}
+      <footer className="adminTableFooter" aria-label={`Navigasi halaman ${label}`}>
+        <span className="adminTableRange">
+          Menampilkan {firstItem}–{lastItem} dari {total} {label} · Halaman {page} dari {lastPage}
         </span>
         <div className="paginationControls">
           <button
             type="button"
-            onClick={() => setPage((current) => Math.max(1, current - 1))}
+            className="pagination-btn is-nav"
+            onClick={() => go(page - 1)}
             disabled={page === 1}
-            aria-label="Halaman sebelumnya"
+            aria-label={`Halaman sebelumnya ${label}`}
           >
-            ‹
+            <span aria-hidden="true">‹</span>
           </button>
-          <span aria-current="page">{page}</span>
+          {items.map((item, i) =>
+            item === "…" ? (
+              <span key={`e-${i}`} className="pagination-ellipsis" aria-hidden="true">…</span>
+            ) : (
+              <button
+                key={item}
+                type="button"
+                className={`pagination-btn ${item === page ? "active" : ""}`}
+                onClick={() => go(item)}
+                aria-current={item === page ? "page" : undefined}
+                aria-label={`Halaman ${item} ${label}`}
+              >
+                {item}
+              </button>
+            ),
+          )}
           <button
             type="button"
-            onClick={() => setPage((current) => Math.min(lastPage, current + 1))}
+            className="pagination-btn is-nav"
+            onClick={() => go(page + 1)}
             disabled={page >= lastPage}
-            aria-label="Halaman berikutnya"
+            aria-label={`Halaman berikutnya ${label}`}
           >
-            ›
+            <span aria-hidden="true">›</span>
           </button>
         </div>
       </footer>
@@ -437,8 +475,37 @@ function AdminDashboard({ onLogout }) {
   // Renders read-only store and order highlights for the dashboard landing page.
   function renderOverviewPage() {
     const recentOrders = workspace.orders.slice(0, pageSize);
+    const topBrands = workspace.summary.topBrands || [];
+    const maxPairs = Math.max(1, ...topBrands.map((b) => b.pairsSold || 0));
+    const lowStock = workspace.products
+      .filter((p) => p.stockCount <= 5)
+      .sort((a, b) => a.stockCount - b.stockCount)
+      .slice(0, 5);
     return (
       <div className="overviewLayout">
+        <section className="duralux-kpi-row" aria-label="Indikator kunci">
+          <div className="duralux-kpi">
+            <span>Pendapatan selesai</span>
+            <strong>{formatPrice(workspace.summary.revenue)}</strong>
+            <small>{workspace.summary.completedCount || 0} pesanan selesai</small>
+          </div>
+          <div className="duralux-kpi">
+            <span>Total pesanan</span>
+            <strong>{workspace.summary.orderCount || workspace.orders.length}</strong>
+            <small>{workspace.summary.pendingCount || 0} menunggu konfirmasi</small>
+          </div>
+          <div className="duralux-kpi">
+            <span>Pelanggan</span>
+            <strong>{workspace.summary.customerCount || workspace.customers.length}</strong>
+            <small>Dari data pesanan tersimpan</small>
+          </div>
+          <div className="duralux-kpi">
+            <span>Stok pasang</span>
+            <strong>{totalPairs}</strong>
+            <small>{workspace.products.length} model · {lowStockCount} menipis</small>
+          </div>
+        </section>
+
         <section className="adminStatsGrid overviewStatsGrid">
           <article className="adminStatCard featuredStat">
             <span className="statIcon"><img src="/images/figma/icons/package-2.svg" alt="" /></span>
@@ -459,6 +526,58 @@ function AdminDashboard({ onLogout }) {
             <p>Pesanan yang perlu dikonfirmasi</p>
           </article>
         </section>
+
+        <div className="duralux-grid">
+          <section className="adminTablePanel">
+            <header className="adminPanelHeader">
+              <h2>Penjualan merek <span>Top 5</span></h2>
+              <button type="button" className="exportButton" onClick={() => handleNavigate("reports")}>Laporan →</button>
+            </header>
+            <div style={{ padding: "6px 14px 14px" }}>
+              {topBrands.length ? (
+                <>
+                  <div className="duralux-mini-bars" role="img" aria-label={`Diagram batang merek terlaris, tertinggi ${topBrands[0].brand}`}>
+                    {topBrands.map((brand) => (
+                      <div
+                        key={brand.brand}
+                        className="bar"
+                        title={`${brand.brand}: ${brand.pairsSold} pasang`}
+                        style={{ height: `${Math.max(12, Math.round(((brand.pairsSold || 0) / maxPairs) * 100))}%` }}
+                      />
+                    ))}
+                  </div>
+                  <div className="brandReportList" style={{ padding: 0 }}>
+                    {topBrands.map((brand, index) => (
+                      <div className="brandReportRow" key={brand.brand}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <strong>{brand.brand}</strong>
+                        <small>{brand.pairsSold} pasang terjual</small>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="emptyTableMessage">Data penjualan akan tersedia setelah pesanan selesai.</p>
+              )}
+            </div>
+          </section>
+          <section className="adminTablePanel">
+            <header className="adminPanelHeader">
+              <h2>Perlu perhatian <span>{lowStock.length}</span></h2>
+              <button type="button" className="exportButton" onClick={() => handleNavigate("products")}>Lihat produk →</button>
+            </header>
+            <div style={{ padding: "4px 14px 12px", display: "grid", gap: 8 }}>
+              {lowStock.length ? lowStock.map((p) => (
+                <div key={p.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, borderBottom: "1px solid var(--line-soft)", padding: "8px 0" }}>
+                  <span style={{ minWidth: 0 }}><strong style={{ display: "block", fontSize: 12, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.brand} — {p.name}</strong><small style={{ color: "var(--muted)", fontSize: 11 }}>{p.categoryName}</small></span>
+                  <span className={`stockStatusBadge ${p.stockCount === 0 ? "habis" : "menipis"}`}>{p.stockCount === 0 ? "Habis" : "Menipis"} · {p.stockCount}</span>
+                </div>
+              )) : (
+                <p className="emptyTableMessage">Semua stok aman. 🎉</p>
+              )}
+            </div>
+          </section>
+        </div>
 
         <section className="adminTablePanel overviewRecentOrders">
           <header className="adminPanelHeader">
@@ -1117,6 +1236,7 @@ function AdminDashboard({ onLogout }) {
             </>
           )}
         </main>
+        <ToastStack toasts={toasts} onDismiss={dismissToast} />
         {productToDelete && (
           <AdminConfirmDialog
             title="Hapus produk ini?"

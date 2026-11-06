@@ -1,15 +1,15 @@
 :root {
-  --paper: #f5f1e9;
-  --paper-deep: #ece7dd;
-  --white: #fffdfa;
-  --ink: #202c26;
-  --green: #244b3d;
-  --green-deep: #1b382e;
-  --green-soft: #315343;
-  --muted: #72786f;
-  --line: #dddcd3;
-  --terracotta: #b94b32;
-  --lime: #d8e69c;
+  --paper: #fffbeb;
+  --paper-deep: #ecfdf5;
+  --white: #ffffff;
+  --ink: #1a2e28;
+  --green: #047857;
+  --green-deep: #065f46;
+  --green-soft: #d1fae5;
+  --muted: #334739;
+  --line: #e7e5dd;
+  --terracotta: #047857;
+  --lime: #6ee7b7;
   --display: "Space Grotesk", "Segoe UI", sans-serif;
 }
 
@@ -5027,7 +5027,7 @@ textarea {
 .paginationControls button:focus-visible,
 .adminMobileNavigation button:focus-visible,
 .adminMobileLogout:focus-visible {
-  outline: 3px solid rgba(185, 75, 50, 0.45);
+  outline: 3px solid rgba(4, 120, 87, 0.45);
   outline-offset: 2px;
 }
 

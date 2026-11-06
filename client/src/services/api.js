@@ -169,15 +169,25 @@ export function buildOrderWhatsAppLink(phoneNumber, order, storeName) {
   const normalizedNumber = normalizeWhatsAppNumber(phoneNumber);
   if (!normalizedNumber) return "";
   const message = [
-    `Halo ${storeName}, saya mau pesan:`,
-    `${order.brand ? `${order.brand} — ` : ""}${order.productName}`,
-    `Warna: ${order.color} · Ukuran: ${order.size} · Jumlah: ${order.quantity} pasang`,
-    `Harga: ${formatPrice(order.unitPrice)} · Total: ${formatPrice(order.totalAmount)}`,
+    `Halo ${storeName} 👋`,
+    `Saya mau pesan:`,
     "",
-    `Nama: ${order.buyerName}`,
-    `Alamat: ${order.address}`,
-    order.note ? `Catatan: ${order.note}` : "",
+    `🧾 *PESANAN BARU*`,
     `No. pesanan: ${order.id}`,
+    `——————————`,
+    `👟 *${order.brand ? `${order.brand} — ` : ""}${order.productName}*`,
+    `Warna   : ${order.color}`,
+    `Ukuran  : ${order.size}`,
+    `Jumlah  : ${order.quantity} pasang`,
+    `——————————`,
+    `💰 Total: *${formatPrice(order.totalAmount)}*`,
+    "",
+    `👤 *Pembeli*`,
+    `Nama   : ${order.buyerName}`,
+    `Alamat : ${order.address}`,
+    order.note ? `Catatan: ${order.note}` : "",
+    "",
+    `Ditunggu konfirmasi stok & ongkir ya, terima kasih 🙏`,
   ]
     .filter(Boolean)
     .join("\n");

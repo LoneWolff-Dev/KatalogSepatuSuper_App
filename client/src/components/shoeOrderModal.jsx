@@ -8,7 +8,7 @@ import {
 import { getFootLength } from "../services/catalogMeta.js";
 
 // Collects the selected shoe and buyer details before opening WhatsApp.
-function OrderModal({ product, settings, onClose }) {
+function OrderModal({ product, settings, onClose, onSuccess }) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name || "");
   const [selectedSize, setSelectedSize] = useState("");
   const [buyerName, setBuyerName] = useState("");
@@ -18,6 +18,7 @@ function OrderModal({ product, settings, onClose }) {
   const [guideOpen, setGuideOpen] = useState(false);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [saved, setSaved] = useState(null);
   const [imageFailed, setImageFailed] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
@@ -56,22 +57,25 @@ function OrderModal({ product, settings, onClose }) {
 
   // Formats a preview of the message that will be sent after an order is saved.
   function getMessagePreview() {
-    const shoeDescription = [
-      product.brand,
-      product.name,
-      selectedColor ? `Warna: ${selectedColor}` : "Warna: [belum dipilih]",
-      selectedSize ? `Ukuran: ${selectedSize}` : "Ukuran: [belum dipilih]",
-      `Jumlah: ${quantity} pasang`,
-    ]
-      .filter(Boolean)
-      .join(" · ");
     return [
-      `Halo ${settings.storeName}, saya mau pesan:`,
-      shoeDescription,
-      `Harga: ${formatPrice(product.price)}${quantity > 1 ? ` · Total: ${formatPrice(product.price * quantity)}` : ""}`,
-      buyerName ? `Nama: ${buyerName}` : "Nama: [belum diisi]",
-      address ? `Alamat: ${address}` : "Alamat: [belum diisi]",
+      `Halo ${settings.storeName} 👋`,
+      `Saya mau pesan:`,
+      "",
+      `🧾 *PESANAN BARU*`,
+      `——————————`,
+      `👟 *${product.brand ? `${product.brand} — ` : ""}${product.name}*`,
+      `Warna   : ${selectedColor || "[belum dipilih]"}`,
+      `Ukuran  : ${selectedSize || "[belum dipilih]"}`,
+      `Jumlah  : ${quantity} pasang`,
+      `——————————`,
+      `💰 Total: *${formatPrice(product.price * quantity)}*`,
+      "",
+      `👤 *Pembeli*`,
+      `Nama   : ${buyerName || "[belum diisi]"}`,
+      `Alamat : ${address || "[belum diisi]"}`,
       note ? `Catatan: ${note}` : "",
+      "",
+      `Ditunggu konfirmasi stok & ongkir ya, terima kasih 🙏`,
     ]
       .filter(Boolean)
       .join("\n");
@@ -90,8 +94,6 @@ function OrderModal({ product, settings, onClose }) {
       return;
     }
 
-    const whatsappWindow = window.open("about:blank", "_blank");
-    if (whatsappWindow) whatsappWindow.opener = null;
     setSubmitting(true);
     try {
       const order = await createOrder({
@@ -108,13 +110,9 @@ function OrderModal({ product, settings, onClose }) {
         order,
         settings.storeName,
       );
-      if (whatsappWindow) {
-        whatsappWindow.location.href = whatsappUrl;
-      } else {
-        window.location.assign(whatsappUrl);
-      }
+      setSaved({ order, whatsappUrl });
+      onSuccess?.();
     } catch (submitError) {
-      whatsappWindow?.close();
       setError(submitError.message);
     } finally {
       setSubmitting(false);
@@ -163,6 +161,35 @@ function OrderModal({ product, settings, onClose }) {
             <img src="/images/figma/icons/close.svg" alt="" />
           </button>
         </header>
+        {saved ? (
+          <div className="orderSuccess">
+            <div className="orderSuccessCheck" aria-hidden="true"><img src="/images/figma/icons/check.svg" alt="" /></div>
+            <h3>Pesanan tersimpan!</h3>
+            <p>No. pesanan <strong>{saved.order.id}</strong> · Total {formatPrice(saved.order.totalAmount)}</p>
+            <div className="waChatPreview">
+              <div className="waChatHeader">
+                <span className="waAvatar" aria-hidden="true">SS</span>
+                <span><strong>{settings.storeName}</strong><small>Online · biasanya balas cepat</small></span>
+              </div>
+              <div className="waBubble">
+                <p>Halo {settings.storeName} 👋, saya mau pesan:</p>
+                <p>🧾 *PESANAN BARU* · No. {saved.order.id}</p>
+                <p>👟 {saved.order.brand ? `${saved.order.brand} — ` : ""}{saved.order.productName} · {saved.order.color} · {saved.order.size} · {saved.order.quantity} pasang</p>
+                <p>💰 Total: {formatPrice(saved.order.totalAmount)}</p>
+                <p>👤 {saved.order.buyerName} · 📍 {saved.order.address}</p>
+                <time>{new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} ✓✓</time>
+              </div>
+            </div>
+            <div className="orderSuccessActions">
+              <a className="orderSubmitButton orderWaCta" href={saved.whatsappUrl} target="_blank" rel="noreferrer">
+                <img src="/images/figma/icons/whatsapp.svg" alt="" />
+                Buka WhatsApp ↗
+              </a>
+              <button type="button" className="secondaryButton" onClick={onClose}>Tutup</button>
+            </div>
+            <p className="orderSubmitFootnote">Tekan tombol di atas — chat WhatsApp terbuka berisi seluruh detail pesananmu.</p>
+          </div>
+        ) : (
         <form className="orderExperienceBody" onSubmit={handleSubmit}>
           <div className="orderShoeDetails">
             <div className="orderShoeGallery">
@@ -418,6 +445,7 @@ function OrderModal({ product, settings, onClose }) {
             </p>
           </div>
         </form>
+        )}
       </section>
     </div>
   );

@@ -1,0 +1,150 @@
+/* Global motion layer: scroll-reveal, marquee, count-up polish, chart grow.
+   Respects prefers-reduced-motion throughout. */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes barGrow {
+  from { transform: scaleY(0.15); opacity: 0.4; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to { background-position: 400px 0; }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance (runs on load, staggered) */
+.morrow-hero > * {
+  animation: fadeUp 0.8s ease both;
+}
+.morrow-hero > *:nth-child(2) { animation-delay: 0.08s; }
+.morrow-hero > *:nth-child(3) { animation-delay: 0.16s; }
+.morrow-btn {
+  animation: floatY 4s ease-in-out infinite;
+}
+.morrow-btn-ghost { animation: none; }
+
+/* Marquee strip */
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: var(--sage-soft);
+  padding: 12px 0;
+  margin-top: 28px;
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 14px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+}
+.marquee-item::after { content: "✦"; color: var(--sage); }
+
+/* Hover micro-interactions */
+.product-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+.morrow-service-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.morrow-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+.morrow-number-card {
+  transition: transform 0.35s ease;
+}
+.morrow-number-card:hover { transform: translateY(-4px); }
+
+/* FAQ smooth open */
+.morrow-faq details { transition: background 0.25s ease, border-color 0.25s ease; }
+.morrow-faq details:hover { border-color: var(--sage); }
+.morrow-faq details[open] p { animation: fadeUp 0.4s ease both; }
+.morrow-faq summary { list-style: none; }
+.morrow-faq summary::-webkit-details-marker { display: none; }
+.morrow-faq summary::after {
+  content: "+";
+  float: right;
+  color: var(--green);
+  font-weight: 800;
+  transition: transform 0.25s ease;
+}
+.morrow-faq details[open] summary::after { transform: rotate(45deg); }
+
+/* Duralux bars grow when dashboard renders */
+.duralux-mini-bars .bar {
+  transform-origin: bottom;
+  animation: barGrow 0.9s ease both;
+}
+.duralux-mini-bars .bar:nth-child(1) { animation-delay: 0.05s; }
+.duralux-mini-bars .bar:nth-child(2) { animation-delay: 0.15s; }
+.duralux-mini-bars .bar:nth-child(3) { animation-delay: 0.25s; }
+.duralux-mini-bars .bar:nth-child(4) { animation-delay: 0.35s; }
+.duralux-mini-bars .bar:nth-child(5) { animation-delay: 0.45s; }
+
+/* Modal / backdrop fade */
+.modal-backdrop,
+.adminModalBackdrop { animation: fadeIn 0.25s ease both; }
+.order-modal,
+.productEditorModal { animation: fadeUp 0.35s ease both; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .marquee-track { animation: none; }
+}

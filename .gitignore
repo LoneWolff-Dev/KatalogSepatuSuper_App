@@ -7,3 +7,4 @@ node_modules/
 server/uploads/
 server/src/db/*.sqlite-shm
 server/src/db/*.sqlite-wal
+AGENTS.md

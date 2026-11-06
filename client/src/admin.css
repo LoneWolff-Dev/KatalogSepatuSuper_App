@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #fff;
+  color: #a7f3d0;
   font-size: 13px;
   font-weight: 750;
   letter-spacing: 0.1px;
@@ -43,7 +43,7 @@
   height: 23px;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: #a7f3d0;
   background: #c44e35;
   border-radius: 6px 6px 6px 2px;
   font-family: Georgia, serif;
@@ -87,12 +87,12 @@
 .adminNavigation button:hover,
 .adminSidebarBottom > button:hover,
 .adminSidebarBottom > a:hover {
-  color: #fff;
+  color: #a7f3d0;
   background: rgba(255, 255, 255, 0.09);
 }
 
 .adminNavigation button.active {
-  color: #fff;
+  color: #a7f3d0;
   background: #bd4d35;
   font-weight: 650;
 }
@@ -181,7 +181,7 @@
 }
 
 .adminProfile strong {
-  color: #fff;
+  color: #a7f3d0;
   font-size: 9px;
   font-weight: 650;
 }
@@ -278,7 +278,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #fff;
+  color: #a7f3d0;
   background: #bd4d35;
   border: 1px solid #bd4d35;
   border-radius: 5px;
@@ -899,7 +899,7 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  color: #fff;
+  color: #a7f3d0;
   background:
     linear-gradient(180deg, rgba(20, 33, 39, 0.28), rgba(17, 26, 34, 0.86)),
     url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=85")
@@ -1446,7 +1446,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
+  color: #a7f3d0;
   background: #204d40;
 }
 
@@ -1468,7 +1468,7 @@
   width: 29px;
   height: 29px;
   flex: none;
-  color: #fff;
+  color: #a7f3d0;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -1619,7 +1619,7 @@
 }
 
 .orderSizeOption.selected {
-  color: #fff;
+  color: #a7f3d0;
   background: #263d33;
   border-color: #263d33;
 }
@@ -1784,7 +1784,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #fff;
+  color: #a7f3d0;
   background: #204d40;
   border: 0;
   border-radius: 5px;
